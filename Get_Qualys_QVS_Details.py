@@ -99,10 +99,10 @@ for i in range(0, len(cve_list), 450):
     print(f"Total CVEs in List: {len(cve_list)}, Remaining CVEs to Process: {len(cve_list) - (i + len(batch_cve_list))}, Total CVEs without QVS: {no_qvs_count}")
 
     # Sleep to respect rate limits - adjust to your needs.
-	# "Standard API" rate limit is 300 calls per hour so a sleep setting of 13 will work. Processing the full NVD will take about 1.5 hours.
-	# "Enterprise API" rate limit is 750 calls per hour so a sleep setting of 5 will work. Processing the full NVD will take about 1 hour.
+	# "Standard API" rate limit is 300 calls per hour means 12 seconds between API calls so a sleep setting of 14 will help ensure we're not going over the rate limit. Processing the a full NVD CVE list will take about 1.75 hours if processing 450 CVE's per loop cycle.
+	# "Enterprise API" rate limit is 750 calls per hour means 4.8 seconds between API calls so a sleep setting of 6 will help ensure we're not going over the rate limit. Processing the full NVD CVE list will take about 1 hour.
 					
-    sleep_duration = 15 #Number of seconds to sleep
+    sleep_duration = 14
     cooldown_message = f"Rate limit cooldown: Sleeping for {sleep_duration} seconds."
     print(cooldown_message, end='', flush=True)  # Print cooldown message without newline
     for remaining in range(sleep_duration, 0, -1):
