@@ -7,7 +7,7 @@ This Python script that will gather the Qualys Vulnerability Score (QVS) details
 
 The Qualys API requires input of explicit CVEs to lookup so you can't just tell it to provide all the QVS scores for the entire KB. So this script relies on a reference text file to feed into the API call. 
 
-My script returns six columns of data:  CVE, QVS, QVSLastChangedDate, NVDPublishedDate, CVSS, and CVSSVersion.
+The script returns six columns of data:  CVE, QVS, QVSLastChangedDate, NVDPublishedDate, CVSS, and CVSSVersion.
 
 ![Image of date columns in Unix timestamp format.](date-orig.png)
 
