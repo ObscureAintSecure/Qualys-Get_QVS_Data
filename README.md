@@ -3,9 +3,9 @@
 
 ------------------------------------------------
 
-My Python script that will gather the Qualys Vulnerability Score (QVS) details for all the CVE's listed in the associated cve_list.txt file. 
+This Python script that will gather the Qualys Vulnerability Score (QVS) details for all the CVE's listed in the associated cve_list.txt file. 
 
-The Qualys requires it be told what CVE to lookup the CVE score for so you can't just tell it to provide all the QVS scores for the entire KB. So this script relies on a reference text file to feed into the API call. 
+The Qualys API requires input of explicit CVEs to lookup so you can't just tell it to provide all the QVS scores for the entire KB. So this script relies on a reference text file to feed into the API call. 
 
 My script returns six columns of data:  CVE, QVS, QVSLastChangedDate, NVDPublishedDate, CVSS, and CVSSVersion.
 
